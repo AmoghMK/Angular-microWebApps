@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>AngularTest</title> 
+        <meta name="author" content="Amogh M K">
+    </head>
+
+    <style>
+        input.ng-valid {background-color: limegreen}
+        input.ng-invalid {background-color: indianred}
+        input.ng-untouched {background-color: lightblue}
+        input:disabled {background-color: gray}
+        input {
+            text-align: right;
+            width: auto;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="angularTest.js"></script>
+
+    <body>
+
+        <h1> EMI Calculator </h1>
+
+        <div ng-app="emi-form" ng-controller="emi-form-controller">
+
+            <form id="form_var" ng-model="form_ng">
+
+                Cost of the product: Rs. <input id="cost_input" type="number" min="1"
+                                            ng-model="cost" placeholder="0" required><br><br>
+
+                <input type="checkbox" id="no_cost_flag_input" value="No Cost EMI"
+                       ng-model="no_cost_flag"> No Cost EMI <br><br>
+
+                EMI Interest Rate: <input id="interest_rate_input" type="number" min="0" max="100"
+                                          pattern="[0-9]*" ng-model="interest_rate"> %<br><br>
+
+                Duration: <input id="duration_input" type="number" min="1" max="60"
+                                 pattern="[0-9]*" ng-model="duration"> Months<br><br>
+
+                <input type="submit" value="Calculate" onclick="calculateEMI()"><br><br>
+
+            </form>
+
+            <p style="display:none"> Principal amount: <span id="principal-amount_span"></span></p>
+            <p style="display:none"> EMI amount: <span id="emi-amount_span"></span></p>
+            <p style="display:none"> Interest amount: <span id="interest-amount_span"></span></p>
+            <p style="display:none"> GST amount: <span id="gst-amount_span"></span></p>
+            <p style="display:none"> Total amount: <span id="total-amount_span"></span></p>
+
+        </div>
+    </body>
+</html>
