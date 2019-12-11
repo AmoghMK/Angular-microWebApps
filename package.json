@@ -1,0 +1,28 @@
+{
+  "name": "microwebapps",
+  "version": "1.0.0",
+  "description": "Learn angular while creating microWebApps",
+  "main": "angularTest.html",
+  "scripts": {
+    "start": "npm run lite",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lite": "lite-server"
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmoghMK/Angular-microWebApps.git"
+  },
+  "keywords": [
+    "Angular",
+    "webApps"
+  ],
+  "author": "Amogh M K",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AmoghMK/Angular-microWebApps/issues"
+  },
+  "homepage": "https://github.com/AmoghMK/Angular-microWebApps#readme"
+}
