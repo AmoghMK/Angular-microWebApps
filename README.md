@@ -1,2 +1,2 @@
 # Angular microWebApps:
-	* EMI Calculator
+* EMI Calculator

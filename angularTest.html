@@ -25,29 +25,27 @@
 
         <div ng-app="emi-form" ng-controller="emi-form-controller">
 
-            <form id="form_var" ng-model="form_ng">
+            <form name="form_var">
 
-                Cost of the product: Rs. <input id="cost_input" type="number" min="1"
-                                            ng-model="cost" placeholder="0" required><br><br>
+                Cost of the product: Rs. <input type="number" min="1" ng-model="item_cost" placeholder="0" required><br><br>
 
-                <input type="checkbox" id="no_cost_flag_input" value="No Cost EMI"
-                       ng-model="no_cost_flag"> No Cost EMI <br><br>
+                <input type="checkbox" value="No Cost EMI" ng-model="no_cost_flag"> No Cost EMI <br><br>
 
-                EMI Interest Rate: <input id="interest_rate_input" type="number" min="0" max="100"
-                                          pattern="[0-9]*" ng-model="interest_rate"> %<br><br>
+                EMI Interest Rate: <input type="number" min="1" max="100" pattern="[0-9]*" ng-model="interest_rate"> %<br><br>
 
-                Duration: <input id="duration_input" type="number" min="1" max="60"
-                                 pattern="[0-9]*" ng-model="duration"> Months<br><br>
+                Duration: <input type="number" min="1" max="60" pattern="[0-9]*" ng-model="duration"> Months<br><br>
 
-                <input type="submit" value="Calculate" onclick="calculateEMI()"><br><br>
+                <input type="submit" value="Calculate" ng-click="displayEMI(form_var.$valid)"><br><br>
 
             </form>
 
-            <p style="display:none"> Principal amount: <span id="principal-amount_span"></span></p>
-            <p style="display:none"> EMI amount: <span id="emi-amount_span"></span></p>
-            <p style="display:none"> Interest amount: <span id="interest-amount_span"></span></p>
-            <p style="display:none"> GST amount: <span id="gst-amount_span"></span></p>
-            <p style="display:none"> Total amount: <span id="total-amount_span"></span></p>
+            <div ng-show="result_show">
+                <p> Principal amount: {{principal_amount}}</p>
+                <p> EMI amount: {{emi_amount}}</p>
+                <p> Interest amount: {{interest_amount}}</p>
+                <p> GST amount: {{gst_amount}}</p>
+                <p> Total amount: {{total_amount}}</p>
+            </div>
 
         </div>
     </body>
