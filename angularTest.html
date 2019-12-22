@@ -14,6 +14,19 @@
             text-align: right;
             width: auto;
         }
+        table, th , td  {
+            border: 2px solid darkgray;
+            border-collapse: collapse;
+            padding: 10px;
+            text-align: center;
+        }
+        table tr:nth-child(odd) {background-color: #f1f1f1;}
+        table tr:nth-child(even) {background-color: #ffffff;}
+        table tr:last-child {
+            background-color: rgba(53, 50, 50, 0.527);
+            font-weight: bold;
+        }
+        table th {background-color: rgba(53, 50, 50, 0.527);}
     </style>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
@@ -37,14 +50,33 @@
 
                 <input type="submit" value="Calculate" ng-click="displayEMI(form_var.$valid)"><br><br>
 
+
             </form>
 
             <div ng-show="result_show">
-                <p> Principal amount: {{principal_amount}}</p>
-                <p> EMI amount: {{emi_amount}}</p>
-                <p> Interest amount: {{interest_amount}}</p>
-                <p> GST amount: {{gst_amount}}</p>
-                <p> Total amount: {{total_amount}}</p>
+                <p> 
+                    <table float="center" align="right">
+                        <tr>
+                            <th>Month</th>
+                            <th>Principal amount</th>
+                            <th>Interest amount</th>
+                            <th>GST amount</th>
+                            <th>Total amount</th>
+                        </tr>
+                        <tr ng-repeat="row in table_data">
+                            <td>{{row.month}}</td>
+                            <td>{{row.principal_amount_month}}</td>
+                            <td>{{row.interest_amount_month}}</td>
+                            <td>{{row.gst_amount_month}}</td>
+                            <td>{{row.total_amount_month}}</td>
+                        </tr>
+                    </table>
+                    <br><br>
+                    <b>EMI amount: {{emi_amount}}<br><br>
+                    Principal amount: {{principal_amount}}<br><br>
+                    Interest amount: {{interest_amount}}<br><br>
+                    GST amount: {{gst_amount}}<br><br>
+                    Total amount: {{total_amount}}<br><br></b>
             </div>
 
         </div>
