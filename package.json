@@ -2,7 +2,6 @@
   "name": "microwebapps",
   "version": "1.0.0",
   "description": "Learn angular while creating microWebApps",
-  "main": "angularTest.html",
   "scripts": {
     "start": "npm run lite",
     "test": "echo \"Error: no test specified\" && exit 1",
